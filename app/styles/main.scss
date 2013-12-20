@@ -1,0 +1,655 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+// overwrite bootstrap styling that is applied automatically 
+#cilantro {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.banner {
+  background: rgba(0,0,0,0.4);
+}
+
+.logo {
+  color: #F8F8F8;
+  display: inline-block;
+  vertical-align: sub;
+  cursor: default;
+}
+
+.title img {
+  cursor: default;
+}
+
+.header {
+  img, .logo {
+    cursor: default;
+  }
+}
+
+.companies {
+  background: rgb(252, 252, 252);
+  p {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 100;
+    color: #ACACAC;
+    padding-top: 30px;
+    margin: 0;
+  }
+}
+
+#online{
+  .companies {
+    background: rgba(255,255,255, 0.7);
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    .title {
+      font-size: 18px;
+      line-height: 1;
+      color: #020202;
+      padding-top: 20px;
+      font-weight: 200;
+      margin: 10px;
+    }
+  }
+
+  .company-logo {
+    height: 40px;
+    cursor: pointer;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: brightness(0%) grayscale(100%);; /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .1s ease; /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+  }
+
+  .company-logo:hover {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+  }
+}
+
+.submit-text {
+  color: ghostwhite;
+  line-height: 40px;
+  font-weight: 200;
+}
+
+.thankyou-text {
+  color: #90CB64;
+}
+
+.company-logos {
+  display: inline-block;
+}
+
+.company-logo {
+  height: 60px;
+  margin: 20px;
+}
+
+.signup {
+  background: #eee;
+  text-align: center;
+  padding: 30px;
+  #email {
+    .form-group {
+      margin: 0;
+    }
+
+    label {
+      color: #666;
+    }
+    input {
+      margin: 10px;
+      display: inline-block;
+    }
+    a {
+      display: inline-block;
+      padding: 9px 16px;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+
+  }
+}
+
+body{
+ // background: #000;
+}
+
+#email {
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 200;
+    font-size: 14px;
+    color: #FFF;
+  }
+  input {
+    width: 20%;
+    margin: 10px auto;
+    min-width: 240px;
+  }
+}
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  // border-bottom: 1px solid #e5e5e5;
+  background: none;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding: 20px 0;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  background: white;
+
+  .footer-content{
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  div {
+    float: left;
+  }
+
+  span {
+    float: right;
+  }
+
+  a {
+    color: #90CB64;
+  }
+  a:hover {
+    text-decoration: none;
+    border-bottom: 1px dashed #90CB64;
+  }
+}
+
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.nav-pills > li + li {
+  margin-left: 10px;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 60px;
+  padding-right: 60px;
+  background: none;
+  padding-top: 20px;
+  border-radius: 0;
+  color: #eee;
+  margin-bottom: 0;
+  h1 {
+    font-size: 70px;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  p {
+    margin: 40px auto;
+    min-width: 200px;
+  }
+  .lead {
+    font-size: 30px;
+    color: #FFF;
+    font-weight: 100;
+  }
+  .company-name {
+    color: ghostwhite;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 1;
+    span {
+      color: #eee;
+      font-weight: 500;
+    }
+  }
+
+  .supported-company {
+    margin: 10px;
+  }
+}
+
+#demo-video {
+  position:absolute;
+  z-index:100;
+  top:10%;
+  left:30%;
+}
+
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    // max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin: 0 auto 30px;
+    padding-top: 20px;
+    width: 70%;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+/*  BigVideo Styles 
+  You may need to adjust these styles to get this working right in your design. 
+*/
+#big-video-wrap{overflow:hidden;position:absolute;height:100%;width:100%;top:0;left:0; z-index: -1;}
+#big-video-vid,#big-video-image{position:absolute;}
+#big-video-control-container{display:none;position:fixed;bottom:0;padding:10px;width:100%;background:rgba(0,0,0,.25);
+  -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
+#big-video-control{width:100%;height:16px;position:relative;}
+#big-video-control-middle{margin: 0 56px 0 24px;}
+#big-video-control-bar{width:100%;height:16px;position:relative;cursor:pointer;}
+#big-video-control-progress{position:absolute;top:7px;height:3px;width:0%;background:#fff;}
+#big-video-control-track{position:absolute;top:8px;height:1px;width:100%;background:#fff;}
+#big-video-control-bound-left{left:0;}
+#big-video-control-bound-right{right:-1px}
+#big-video-control-track .ui-slider-handle {opacity:0;}
+#big-video-control-playhead{left:30%;}
+#big-video-control-play{position:absolute;top:0;left:0;height:16px;width:16px;background-image:url('bigvideo.png');}
+#big-video-control-timer{position:absolute;top:1px;right:0;color:#fff;font-size:11px;}
+#big-video-control-playhead,#big-video-control-bound-left,#big-video-control-bound-right{position:absolute;top:0;height:16px;width:1px;background:#fff;}
+#big-video-control .ui-slider-handle{border-left:solid 1px #fff; width:16px;height:16px;position:absolute;top:-8px;}
+.transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0;}
+.vjs-big-play-button{display:none !important;}
+.vjs-control-bar{display:none;}
+
+/* ROOMS */
+
+#chat {
+  max-width: 700px;
+
+  .title {
+    width: 30%;
+    float: left;
+  }
+
+  .logo {
+    color: #B5B5B5;
+  }
+  p {
+    color: #aaa;
+    font-size: 14px;
+  }
+}
+
+#room {
+  max-width: 700px;
+  background: #fcfcfc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* Referral */
+
+.referral, .referral-mobile {
+  margin: 20px 0 10px;
+  width: 70%;
+  float: right;
+  text-align: right;
+
+  span {
+    color: #90CB64;
+  }
+
+  .btn-lg, .btn-group-lg > .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.33;
+    border-radius: 4px;
+  }
+
+  .invite {
+    margin: 10px 0;
+
+    input {
+      margin: 10px;
+      width: 40%;
+      min-width: 270px;
+      display: inline-block;
+    }
+  }
+}
+
+.thankyou-ref-text {
+  color: #90CB64;
+}
+
+.referral-mobile {
+  display: none;
+}
+
+/* Chat */
+
+.message-col {
+  width: 100%;
+  height: 90%;
+  margin: 10px auto;
+  background-color: #F2F9F0;
+}
+
+.chat-menu {
+  background-color: #90CB64;
+  color: #FFFFFF;
+  padding: 0 10px;
+}
+
+.chat-icon {
+  float: right;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+//  background: url("/img/chat.png");
+  margin: 2px 5px;
+}
+
+
+.notify-icon {
+  float: right;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+ // background: url("/img/notify.png");
+  margin: 2px 5px;
+  cursor: pointer;
+}
+
+.stop-notify-icon {
+  float: right;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+ // background: url("/img/notify_black.png");
+  margin: 2px 5px;
+  cursor: pointer;
+}
+
+.chat-users {
+  padding: 10px;
+  overflow-y: scroll;
+  height: 70px;
+  border-bottom: 1px solid #DADAFF;
+}
+
+.chat-users ul {
+  padding-left: 0px;
+}
+
+.chat-users ul li {
+  line-height: 14px;
+  font-size: 12px;
+}
+
+.chat-users .mic {
+  width: 16px;
+  display: inline-block;
+  height: 16px;
+  background: url("/img/mic.png");
+  border: none;
+  margin-right: 5px;
+}
+
+.chat-users .mic-active {
+  width: 16px;
+  display: inline-block;
+  height: 16px;
+  background: url("/img/mic_green.png");
+  border: none;
+  margin-right: 5px;
+}
+
+.chat-users .mic-disabled {
+  width: 16px;
+  display: inline-block;
+  height: 16px;
+  background: url("/img/mic_gray.png");
+  border: none;
+  margin-right: 5px;
+}
+
+.chat-self {
+  color: #C0BE83;
+  font-weight: 400;
+}
+
+.chat-other {
+  color: #417C14;
+  font-weight: 400;
+}
+
+.overflowable {
+  padding: 20px 10px 10px;
+  overflow-y: scroll;
+}
+
+.overflowable p {
+  margin: 0 0 8px;
+  color: #DBDAC0;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.chat-msg {
+  color: #999;
+}
+
+.chat-txt {
+  color: #90CB64;
+  overflow-wrap: break-word;
+  margin-left: 10px;
+}
+
+.chat-txt a:hover {
+  text-decoration: none;
+  color: #21B2CF;
+}
+
+.chat-time {
+  float: right;
+  width: 30%;
+  text-align: right;
+  color: #999999;
+  font-size: 11px;
+}
+
+.msg-field {
+  padding: 10px;
+  bottom: 5px;
+  width: 100%;
+}
+
+.msg-field form, .msg-field input {
+  width: 100%;
+}
+
+
+
+ // FOR MOBILE
+
+@media only screen and (min-device-width : 320px) 
+ and (max-device-width : 568px) { 
+  .pull-right {
+    float: none !important;
+  }
+  li {
+    margin-left: 0;
+    text-align: center;
+    padding: 10px 0;
+  }
+  nav li {
+    float: none;
+    margin-left: 0;
+    margin: 10px auto;
+    display: block;
+    width: 95%;
+    text-align: center;
+  }
+  .nav-pills > li {
+    float: none;
+    margin: 0;
+  }
+  .nav-pills > li + li {
+    margin-left: 0;
+  }
+
+  .header .cilantro-logo {
+    text-align: center;
+  }
+
+  .header h3 {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .container .jumbotron {
+    padding: 0;
+    border-radius: 0;
+    h1 {
+      font-size: 40px;
+    }
+    p {
+
+    }
+    .lead {
+      font-size: 16px;
+    }
+    .company-name {
+      font-size: 40px;
+    }
+  }
+
+  .marketing {
+    width: 100%;
+  }
+
+  .company-logo {
+    margin: 50px auto 30px;
+    display: block;
+  }
+
+  #online {
+    .companies {
+      width: 100%;
+      border-radius: 0;
+
+      .title {
+        font-size: 14px;
+        font-weight: 200;
+        padding: 20px;
+      }
+    }
+    .company-logo {
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+      -webkit-filter: grayscale(0%);
+    }
+  }
+
+  #email a {
+    margin-top: 20px;
+  } 
+
+  #chat {
+    .title {
+      width: 100%;
+      float: none;
+      text-align: center;
+    }
+    .referral {
+      display: none;
+    }
+  }
+
+  .referral-mobile {
+    display: block;
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .footer {
+    text-align: center;
+    .footer-content {
+      width: 100%;
+    }
+
+    span {
+      float: none;
+      display: block;
+    }
+  }
+
+}
+
+

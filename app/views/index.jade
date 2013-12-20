@@ -1,0 +1,82 @@
+!!! 5
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8  
+//if IE 8
+  html.no-js.lt-ie9  
+// [if gt IE 8] <!
+html.no-js
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Houdini
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    // build:css(.tmp) styles/main.css
+    //-link(rel='stylesheet', href='/bower_components/BigVideo.js/css/bigvideo.css')    
+    link(rel='stylesheet', href='/styles/main.css')
+    // endbuild
+  body(ng-app='cilantroApp')
+    //if lt IE 7
+      p.browsehappy
+        | You are using an
+        strong outdated
+        | browser. Please
+        a(href='http://browsehappy.com/') upgrade your browser
+        | to improve your experience.
+    //if lt IE 9
+      script(src='/bower_components/es5-shim/es5-shim.js')
+      script(src='/bower_components/json3/lib/json3.min.js')
+    // Add your site or application content here
+    .container#cilantro(ng-view='', ng-controller='CilantroCtrl')
+    // Google Analytics: change UA-XXXXX-X to be your site's ID
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1920643-7']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();      
+    script(src='/bower_components/jquery/jquery.js')
+    script(src='/bower_components/angular/angular.js')
+    script(src="//static.firebase.com/v0/firebase.js")
+    script(src="//cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js")
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js')            
+    // build:js({.tmp,app}) scripts/plugins.js
+    script(src='/bower_components/sass-bootstrap/js/affix.js')
+    script(src='/bower_components/sass-bootstrap/js/alert.js')
+    script(src='/bower_components/sass-bootstrap/js/button.js')
+    script(src='/bower_components/sass-bootstrap/js/carousel.js')
+    script(src='/bower_components/sass-bootstrap/js/transition.js')
+    script(src='/bower_components/sass-bootstrap/js/collapse.js')
+    script(src='/bower_components/sass-bootstrap/js/dropdown.js')
+    script(src='/bower_components/sass-bootstrap/js/modal.js')
+    script(src='/bower_components/sass-bootstrap/js/scrollspy.js')
+    script(src='/bower_components/sass-bootstrap/js/tab.js')
+    script(src='/bower_components/sass-bootstrap/js/tooltip.js')
+    script(src='/bower_components/sass-bootstrap/js/popover.js')
+    // endbuild
+    // build:js({.tmp,app}) scripts/modules.js
+    script(src='/bower_components/angular-resource/angular-resource.js')
+    script(src='/bower_components/angular-cookies/angular-cookies.js')
+    script(src='/bower_components/angular-sanitize/angular-sanitize.js')
+    script(src='/bower_components/angular-route/angular-route.js')
+    script(src='/bower_components/modernizr/modernizr.js') 
+    script(src='/bower_components/jquery-ui/ui/jquery-ui.js')
+    script(src='/bower_components/jquery-ui/ui/jquery.ui.mouse.js')
+    script(src='/bower_components/jquery-ui/ui/jquery.ui.slider.js')
+    // endbuild
+    // build:js({.tmp,app}) scripts/scripts.js
+    script(src='/scripts/app.js')
+    script(src='/scripts/config.js')
+    script(src='/scripts/controllers/main.js')
+    script(src='/scripts/controllers/room.js') 
+    script(src='/scripts/controllers/cilantro.js')                       
+    script(src='/scripts/controllers/profile.js')
+    // endbuild

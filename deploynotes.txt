@@ -1,0 +1,3 @@
+need to add / to static assets in heroku
+need to make server.js and index.js in heroku agree with corresponding files in local app
+need to fix grunt file to handle these automatically and to put the media folder in the right place

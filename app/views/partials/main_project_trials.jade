@@ -1,0 +1,28 @@
+.banner
+  .header
+    ul.nav.nav-pills.pull-right
+      li(ng-show="formIsVisible.startup")
+        input.form-control(ng-model="startupName", placeholder="name of your startup?")         
+      li(ng-show="formIsVisible.startup")
+        input.form-control(ng-model="startupEmail", placeholder="your email address?")         
+      li
+        a.btn-primary(href='', ng-click="handleForm('startup')", ng-hide="signedUp('startup')") {{signupText().startup}}
+        span.submit-text(ng-show="signedUp('startup')") {{signupText().startup}}      
+    h3.logo Cilantro
+  .jumbotron
+    .value-prop
+      h1 Paid project trials with startups you love
+      p.lead Ditch crappy interviews. Work on real projects with great teams and get paid for your time.
+      form#email(role="form")
+          .form-group
+            label(for="email") Notify me of relevant paid projects at top startups
+            input.form-control#email(type="email", ng-model="email", placeholder="Enter your email")                       
+      p
+        a.btn.btn-lg.btn-success(href="", ng-click="handleForm('signup')", ng-hide="signedUp('signup')") {{signupText().signup}}
+        span.thankyou-text(ng-show="signedUp('signup')") {{signupText().signup}}
+.companies
+  .row.marketing
+    .company-logos
+      img.company-logo(ng-repeat='thing in awesomeThings', src="{{thing.logo}}")
+.footer
+  p ♥ from San Francisco

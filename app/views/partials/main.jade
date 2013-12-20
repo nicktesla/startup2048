@@ -1,0 +1,23 @@
+.banner
+  .header    
+    div.cilantro-logo
+      //- img(src='/media/logo_white.png')
+      h3.logo houdini
+  .jumbotron.video-image
+    .value-prop
+      h1 Test your website without writing code
+      p.lead automatically generated end to end tests run continuously in the cloud
+      div(ng-controller="BecomeExpertCtrl")    
+        a#video-popup(ng-click="open()") WATCH A VIDEO     
+    .signup
+      form#email(role="form")
+        .form-group
+          label(for="email") Want to get notified when we launch? Enter your email and we'll let you know!
+          div
+            input.form-control(type="email", ng-model="email", placeholder="Enter your email")  
+            a.btn.btn-lg.btn-success(href="", ng-click="handleForm('signup')", ng-hide="signedUp('signup')") {{signupText().signup}}
+        span.thankyou-text(ng-show="signedUp('signup')") {{signupText().signup}}
+.footer
+  p ♥ from San Francisco
+    //- span
+    //-   a(href="/about") About
