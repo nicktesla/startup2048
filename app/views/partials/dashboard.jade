@@ -54,7 +54,7 @@
         ```
     .copy-code-container
       .copy-code-button.secondary-button.small(data-clipboard-target='project-code')
-        span.button-text Copy to Clipboard
+        //- span.button-text Copy to Clipboard
   .plans(ng-hide="showTests")
     h1 What Houdini plan would you use?
     ul.plan-box(ng-repeat="plan in plans")
@@ -106,12 +106,8 @@
                     });              
                   ```
         .snapshots(ng-hide="codeVisible")
-          li.snapshot-label(ng-click="showSnapshot('before')")
-            a.before-snapshot-text(href="") Before
-            div(ng-class="{snapshot:!beforeVisible, zoom:beforeVisible}")
-              img(ng-src="{{test.snapshots.before}}")
           li.snapshot-label(ng-click="showSnapshot('after')")
-            a.after-snapshot-text(href="") After
+            a.after-snapshot-text(href="") Previous
             div(ng-class="{snapshot:!afterVisible, zoom:afterVisible}")
               img(ng-src="{{test.snapshots.after}}")
           li.snapshot-label(ng-click="showSnapshot('latest')")

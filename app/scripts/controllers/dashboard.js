@@ -112,8 +112,11 @@ angular.module('houdiniApp')
 			  		"tweet": ["login", "tweet"],
 			  		"failed-login":["failed-login", "tweet", "signup"]
 			  	}
-
-				if($scope.currTest) {
+			  	if($scope.currTest == "none") {
+			  		$scope.tests = [];
+			  		$scope.showEmbedCode = true;
+			  	}
+				else if($scope.currTest) {
 					$scope.tests = _.filter(tests, function(test){
 						console.log(test.id, "is in the tests to show for: ", $scope.currTest);
 						return testsToShow[$scope.currTest].indexOf(test.id)>-1;
