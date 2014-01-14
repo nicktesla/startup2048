@@ -81,6 +81,7 @@ auth(app, passport);
 
 //redirect all others to the index (HTML5 history)
 app.get('/dashboard', routes.index(app));
+app.get('/dashboard/:testName', routes.index(app));
 
 
 

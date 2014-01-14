@@ -20,7 +20,11 @@ angular.module('houdiniApp', [
       .when('/dashboard', {
         templateUrl: '/partials/dashboard',
         controller: 'DashboardCtrl'
-      })                 
+      })
+      .when('/dashboard/:testName', {
+        templateUrl: '/partials/dashboard',
+        controller: 'DashboardCtrl'
+      })                        
       .otherwise({
         redirectTo: '/'
       });

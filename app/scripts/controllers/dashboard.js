@@ -5,13 +5,27 @@ angular.module('houdiniApp')
   	//var username = "nicktesla";
 
   	$scope.showEmbedCode = false;
-  	$scope.showTests = false;
-	
+  	$scope.showTests = true;
+
+  	if($routeParams.testName) {
+  		console.log($routeParams.testName)
+  		$scope.currTest = $routeParams.testName;
+  	}
+
 	loadCurrentUser();
 	loadPlans();
 	
 	$scope.toggleTests = function(){
 		$scope.showTests = !$scope.showTests;
+	}
+
+	$scope.statusImage = function(status) {
+		if(status=="passed") {
+			return "passed30.png";
+		}
+		else {
+			return "failed30.jpg";
+		}
 	}
 	$scope.selectPlan = function(planTitle){
 		var planData = {
@@ -91,7 +105,23 @@ angular.module('houdiniApp')
 	function loadTests() {
 		if($scope.currProjectName) {
 			$http.get("/api/test/"+$scope.currProjectName).success(function(tests){
-				$scope.tests = tests;      
+			  	
+			  	var testsToShow = {
+			  		"login": ["login"],
+			  		"signup": ["failed-login", "tweet", "signup"],
+			  		"tweet": ["login", "tweet"],
+			  		"failed-login":["failed-login", "tweet", "signup"]
+			  	}
+
+				if($scope.currTest) {
+					$scope.tests = _.filter(tests, function(test){
+						console.log(test.id, "is in the tests to show for: ", $scope.currTest);
+						return testsToShow[$scope.currTest].indexOf(test.id)>-1;
+					})
+				}
+				else {
+					$scope.tests = tests;      					
+				}
 			});
 		}		
 	}

@@ -23,7 +23,7 @@
   .bottom.section
     #add-project
       input(placeholder="add a new project", ng-model="projectName")
-      input.btn.primary-btn(type="submit", ng-click="addProject(projectName)")
+      //-input.btn.primary-btn(type="submit", ng-click="addProject(projectName)")
 .main-panel
   .panel-header(ng-show="showTests")
     .project-name
@@ -76,7 +76,12 @@
 
   .tests(ng-show="showTests")
     .test-section(ng-repeat="test in tests")
-      h3 {{test.title}}
+      .test-header
+        .test-title
+          h3 {{test.title}}
+        .test-status
+          //-span.status-text {{test.status}}
+          img.status-image(ng-src="/media/{{statusImage(test.status)}}")
       ul
         li(ng-repeat="step in test.steps"){{step}}
         .test-code

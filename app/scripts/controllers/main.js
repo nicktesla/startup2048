@@ -134,7 +134,7 @@ angular.module('houdiniApp')
       $rootScope.modalOpen = true;
       $timeout(function(){
         $('.modal').show();
-      },100);
+      },500);
     };
   });
 
