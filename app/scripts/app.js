@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('cilantroApp', [
+angular.module('houdiniApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute', 
   'firebase',
   'ui.bootstrap', 
-  'cilantroApp.config'
+  'houdiniApp.config'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);  
@@ -17,22 +17,10 @@ angular.module('cilantroApp', [
         templateUrl: '/partials/main',
         controller: 'MainCtrl'
       })
-      .when('/room/:roomName/company/:companyName', {
-        templateUrl: '/partials/room',
-        controller: 'RoomCtrl'
-      })
       .when('/dashboard', {
         templateUrl: '/partials/dashboard',
-        controller: 'RoomCtrl'
-      })      
-      .when('/room/:roomName', {
-        templateUrl: '/partials/room',
-        controller: 'RoomCtrl'
-      })
-      .when('/:dashedFullName', {
-        templateUrl: '/partials/profile',
-        controller: 'ProfileCtrl'
-      })            
+        controller: 'DashboardCtrl'
+      })                 
       .otherwise({
         redirectTo: '/'
       });

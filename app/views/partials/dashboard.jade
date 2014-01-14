@@ -1,5 +1,119 @@
-ul
-    li(ng-repeat="request in requests") {{companyName}}
-      ul 
-        li(ng-repeat="link in request.urls") 
-          a(ng-href="{{link}}") {{link}}
+#header-top.full-width
+  div(style='display: block;')
+    .top-logo(ng-click="goHome()")
+      span.logo-text houdini
+    ul.nav-top.signed-in
+      li#my-account-menu.dropdown.dropdown-account(data-bind='css: { shown: accountMenu.shown }')
+        a.account-menu-username.dropdown-arrow {{currentUser.username}}
+      li
+        a#sign-out(ng-show="currentUser", href="", ng-click="logOut()") logout
+        a#sign-in(ng-hide="currentUser", href="", ng-click="logOut()") login
+
+#navigation-container(data-bind='"css": { hidden: !pageReady() }')
+  .projects-panel
+    span.title Projects
+  .projects-container.list-section
+    ul.projects.ko_container.ui-sortable
+      li.section.expandable.selected(ng-repeat="project in projects", ng-click="selectProject(project.projectName)")
+        span.name(title='My Project') {{project.projectName}}
+        ul.project-items(style='')
+          li.experiments.selected(ng-click="toggleTests()") Tests
+          li.segments.locked
+            | Analytics
+  .bottom.section
+    #add-project
+      input(placeholder="add a new project", ng-model="projectName")
+      input.btn.primary-btn(type="submit", ng-click="addProject(projectName)")
+.main-panel
+  .panel-header(ng-show="showTests")
+    .project-name
+      h1(ng-show="currProjectName") {{currProjectName}} 
+      | (API KEY: {{currProject._id}})
+      #set-project(ng-hide="currProjectName")
+        input(placeholder="What's the name of your project?", ng-model="projectName")
+        input.btn.primary-btn(type="submit", ng-click="addProject(projectName)")
+    .setup
+      .code-setup
+        a(href="", ng-click="showEmbedCode = !showEmbedCode") Get Embed Code for Project
+      .project-settings
+        a(href="") Add Collaborators
+  .popup(ng-show="showEmbedCode")
+    p
+      | This project code is unique to this project. Include it on every page
+      | that should run this project's experiments or be tracked as a goal.
+    p
+      strong
+        | Copy this code and paste it immediately after your opening head
+        | tag.
+    #project-code.embed-code
+      :markdown
+        ```javascript
+        <script src="//cdn.tryhoudini.com/houdini.js"></script>
+          Houdini.init("{{currProject._id}}")
+          Houdini.startListening();               
+        ```
+    .copy-code-container
+      .copy-code-button.secondary-button.small(data-clipboard-target='project-code')
+        span.button-text Copy to Clipboard
+  .plans(ng-hide="showTests")
+    h1 What Houdini plan would you use?
+    ul.plan-box(ng-repeat="plan in plans")
+      li
+        .plan-main-summary
+          span.plan-info.plan-title {{plan.title}}
+          span.plan-info.plan-price-text ${{plan.monthlyPrice}}/mo
+          span.plan-info
+            a.btn.btn-success(href="", ng-click="selectPlan(plan.title)") Select         
+        .plan-details
+          span.plan-info {{plan.numProjects}}
+          span.plan-info {{plan.numAccounts}}
+          span.plan-info {{plan.numChecks}} builds
+          span.plan-info {{plan.numNotifications}} SMS notifications
+          span.plan-info {{plan.supportType}} support
+          //- span.plan-info {{plan.testLimit}} tests
+          span.plan-info(ng-show="{{plan.mobileWeb}}") Mobile web & cross browser testing
+          //-span.plan-info(ng-show="{{plan.crossBrowser}}") Cross browser testing
+
+  .tests(ng-show="showTests")
+    .test-section(ng-repeat="test in tests")
+      h3 {{test.title}}
+      ul
+        li(ng-repeat="step in test.steps"){{step}}
+        .test-code
+          li
+            a.after-snapshot-text(href="", ng-click="showCode()") Test code
+            div(ng-show="codeVisible", ng-class="{snapshot:!latestVisible, zoom:latestVisible}")
+              #project-code.embed-code
+                :markdown
+                  ```javascript
+                    describe('login flow', function() {    
+                        ptor = protractor.getInstance();
+                        it('should say logged in', function() {
+                          ptor.get('/#');
+                          element(by.id('signin-email')).sendKeys('levandreessen');
+                          element(by.id('signin-password')).sendKeys('aabbcc');
+                          button = ptor.findElement(protractor.By.css('.submit.btn.primary-btn.flex-table-btn.js-submit'));
+                          body = ptor.findElement(protractor.By.tagName('body'));
+                          button.click();
+                          message = ptor.findElement(protractor.By.className('js-timeline-title'));
+                          expect(message.getText()).toEqual('Tweets');
+                         });
+                    });              
+                  ```
+        .snapshots(ng-hide="codeVisible")
+          li.snapshot-label(ng-click="showSnapshot('before')")
+            a.before-snapshot-text(href="") Before
+            div(ng-class="{snapshot:!beforeVisible, zoom:beforeVisible}")
+              img(ng-src="{{test.snapshots.before}}")
+          li.snapshot-label(ng-click="showSnapshot('after')")
+            a.after-snapshot-text(href="") After
+            div(ng-class="{snapshot:!afterVisible, zoom:afterVisible}")
+              img(ng-src="{{test.snapshots.after}}")
+          li.snapshot-label(ng-click="showSnapshot('latest')")
+            a.after-snapshot-text(href="") Latest
+            div(ng-class="{snapshot:!latestVisible, zoom:latestVisible}")
+              img(ng-src="{{test.snapshots.latestDiff}}")
+
+
+
+

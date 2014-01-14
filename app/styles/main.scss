@@ -10,14 +10,14 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 // overwrite bootstrap styling that is applied automatically 
-#cilantro {
+#houdini {
   width: 100%;
   max-width: 100%;
   padding: 0;
 }
 
 .banner {
-  background: rgba(0,0,0,0.4);
+  // background: rgba(0,0,0,0.4);
 }
 
 .logo {
@@ -88,7 +88,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 .thankyou-text {
-  color: #90CB64;
+  color: white;
 }
 
 .company-logos {
@@ -101,16 +101,18 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 .signup {
-  background: #eee;
+  background: #F0AF3E;
   text-align: center;
   padding: 30px;
+  margin-top:20px;
   #email {
     .form-group {
       margin: 0;
     }
 
     label {
-      color: #666;
+      color: white;
+      font-size:18px;
     }
     input {
       margin: 10px;
@@ -129,7 +131,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 body{
- // background: #000;
+ background: #fff;
 }
 
 #email {
@@ -218,7 +220,7 @@ body{
   background: none;
   padding-top: 20px;
   border-radius: 0;
-  color: #eee;
+  color: black;
   margin-bottom: 0;
   h1 {
     font-size: 70px;
@@ -226,12 +228,18 @@ body{
     font-weight: 500;
   }
   p {
-    margin: 40px auto;
+    margin: 5px auto;
     min-width: 200px;
+  }
+  .value-prop {
+    color:black;
+    background-image: url('/media/robot530.jpg');
+    background-repeat: no-repeat;  
+    background-position: 4%, 1%;  
   }
   .lead {
     font-size: 30px;
-    color: #FFF;
+    color: black;
     font-weight: 100;
   }
   .company-name {
@@ -301,355 +309,185 @@ body{
 }
 
 
-/*  BigVideo Styles 
-  You may need to adjust these styles to get this working right in your design. 
-*/
-#big-video-wrap{overflow:hidden;position:absolute;height:100%;width:100%;top:0;left:0; z-index: -1;}
-#big-video-vid,#big-video-image{position:absolute;}
-#big-video-control-container{display:none;position:fixed;bottom:0;padding:10px;width:100%;background:rgba(0,0,0,.25);
-  -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
-#big-video-control{width:100%;height:16px;position:relative;}
-#big-video-control-middle{margin: 0 56px 0 24px;}
-#big-video-control-bar{width:100%;height:16px;position:relative;cursor:pointer;}
-#big-video-control-progress{position:absolute;top:7px;height:3px;width:0%;background:#fff;}
-#big-video-control-track{position:absolute;top:8px;height:1px;width:100%;background:#fff;}
-#big-video-control-bound-left{left:0;}
-#big-video-control-bound-right{right:-1px}
-#big-video-control-track .ui-slider-handle {opacity:0;}
-#big-video-control-playhead{left:30%;}
-#big-video-control-play{position:absolute;top:0;left:0;height:16px;width:16px;background-image:url('bigvideo.png');}
-#big-video-control-timer{position:absolute;top:1px;right:0;color:#fff;font-size:11px;}
-#big-video-control-playhead,#big-video-control-bound-left,#big-video-control-bound-right{position:absolute;top:0;height:16px;width:1px;background:#fff;}
-#big-video-control .ui-slider-handle{border-left:solid 1px #fff; width:16px;height:16px;position:absolute;top:-8px;}
-.transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0;}
-.vjs-big-play-button{display:none !important;}
-.vjs-control-bar{display:none;}
+/* DASHBOARD */
 
-/* ROOMS */
-
-#chat {
-  max-width: 700px;
-
-  .title {
-    width: 30%;
-    float: left;
-  }
-
-  .logo {
-    color: #B5B5B5;
-  }
-  p {
-    color: #aaa;
-    font-size: 14px;
-  }
+.logo-text {
+  font-size: 27px;
 }
 
-#room {
-  max-width: 700px;
-  background: #fcfcfc;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.top-logo {
+  float:left;
+  margin-left:10px;
 }
 
-
-/* Referral */
-
-.referral, .referral-mobile {
-  margin: 20px 0 10px;
-  width: 70%;
-  float: right;
-  text-align: right;
-
-  span {
-    color: #90CB64;
-  }
-
-  .btn-lg, .btn-group-lg > .btn {
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.33;
-    border-radius: 4px;
-  }
-
-  .invite {
-    margin: 10px 0;
-
-    input {
-      margin: 10px;
-      width: 40%;
-      min-width: 270px;
-      display: inline-block;
-    }
-  }
-}
-
-.thankyou-ref-text {
-  color: #90CB64;
-}
-
-.referral-mobile {
-  display: none;
-}
-
-/* Chat */
-
-.message-col {
-  width: 100%;
-  height: 90%;
-  margin: 10px auto;
-  background-color: #F2F9F0;
-}
-
-.chat-menu {
-  background-color: #90CB64;
-  color: #FFFFFF;
-  padding: 0 10px;
-}
-
-.chat-icon {
-  float: right;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-//  background: url("/img/chat.png");
-  margin: 2px 5px;
-}
-
-
-.notify-icon {
-  float: right;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
- // background: url("/img/notify.png");
-  margin: 2px 5px;
+.top-logo:hover {
   cursor: pointer;
 }
 
-.stop-notify-icon {
-  float: right;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
- // background: url("/img/notify_black.png");
-  margin: 2px 5px;
-  cursor: pointer;
+.main-panel {
+  margin-left:250px;
+  margin-top: 30px;
 }
 
-.chat-users {
-  padding: 10px;
-  overflow-y: scroll;
-  height: 70px;
-  border-bottom: 1px solid #DADAFF;
+.panel-header {
+  margin-left:30px;
+  height:100px;
+  .project-name {
+    float:left;
+  }
+  .setup {
+    margin-left: 303px;
+    float:left;
+  }
 }
 
-.chat-users ul {
-  padding-left: 0px;
+.snapshot img {
+  margin-right:15px;
+  margin-bottom:70px;
+  width: 200px;
 }
 
-.chat-users ul li {
-  line-height: 14px;
-  font-size: 12px;
+.zoom img {
+  position:absolute;
+  top:140px;
+  width: 980px;
+  margin-bottom:980px;
 }
 
-.chat-users .mic {
-  width: 16px;
-  display: inline-block;
-  height: 16px;
-  background: url("/img/mic.png");
-  border: none;
-  margin-right: 5px;
+.snapshot-label {
+  float:left;
 }
 
-.chat-users .mic-active {
-  width: 16px;
-  display: inline-block;
-  height: 16px;
-  background: url("/img/mic_green.png");
-  border: none;
-  margin-right: 5px;
+.test-section {
+  clear:both;
+  margin:20px;
 }
 
-.chat-users .mic-disabled {
-  width: 16px;
-  display: inline-block;
-  height: 16px;
-  background: url("/img/mic_gray.png");
-  border: none;
-  margin-right: 5px;
+.code-setup {
+  margin-right:20px;
+  display:inline;
 }
 
-.chat-self {
-  color: #C0BE83;
-  font-weight: 400;
+.project-settings {
+  display:inline;
 }
 
-.chat-other {
-  color: #417C14;
-  font-weight: 400;
+.projects-container ul {
+  list-style: none;
+  margin-top: 10px;
+  margin-left:30px;
+  padding: 0;
 }
 
-.overflowable {
-  padding: 20px 10px 10px;
-  overflow-y: scroll;
+.projects-panel {
+  margin-top:35px;
+  margin-left:10px;
 }
 
-.overflowable p {
-  margin: 0 0 8px;
-  color: #DBDAC0;
-  font-size: 13px;
-  line-height: 13px;
+.plan-info {
+  margin-left:10px;
 }
 
-.chat-msg {
-  color: #999;
+pre code {
+  color: #4269B2;
+  font-family: Courier;
+  font-size: 0.9em;
+  line-height: 1;  
 }
 
-.chat-txt {
-  color: #90CB64;
-  overflow-wrap: break-word;
-  margin-left: 10px;
+#header-top {
+  background: #F7B33B;
+  border-bottom: 1px solid #104682;
+  color: #fff;
+  min-height: 40px;
+  position: relative;
+  z-index: 1001;
 }
 
-.chat-txt a:hover {
-  text-decoration: none;
-  color: #21B2CF;
+.nav-top {
+  float:right;
+  display:inline;
+  list-style:none;  
 }
 
-.chat-time {
-  float: right;
+.nav-top li {
+  display:inline-block;
+}
+
+.account-menu-username {
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+#sign-in {
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+#sign-out {
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+#navigation-container {
+  background-image: url('/media/robot515.jpg');
+  background-position: 1%, 1%;  
+  color:black;
+  font-size: 16px;
+  padding: 35px 0 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+}
+
+.bottom {
+  margin-left: 32px;
+}
+
+.login-prompt {
+  margin-left:10px;
+}
+
+.plan-box{
+  background-image:url('/media/sheet315.jpg');
   width: 30%;
-  text-align: right;
-  color: #999999;
-  font-size: 11px;
+  height: 340px;
+  display: inline-block;
+  float: left;
+  margin-right: 19px;
+  padding: 20px;
+  border: solid 1px #BBD146;
+  li{
+    list-style: none;
+  }  
 }
 
-.msg-field {
-  padding: 10px;
-  bottom: 5px;
-  width: 100%;
+.plan-info{
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  clear: both;
+  display: block;
+  border: solid 1px #f1f1f1;
 }
 
-.msg-field form, .msg-field input {
-  width: 100%;
+.plan-title {
+  font-size: 30px;
+  color: #BBD146;
+  font-weight: bold;
 }
 
-
-
- // FOR MOBILE
-
-@media only screen and (min-device-width : 320px) 
- and (max-device-width : 568px) { 
-  .pull-right {
-    float: none !important;
-  }
-  li {
-    margin-left: 0;
-    text-align: center;
-    padding: 10px 0;
-  }
-  nav li {
-    float: none;
-    margin-left: 0;
-    margin: 10px auto;
-    display: block;
-    width: 95%;
-    text-align: center;
-  }
-  .nav-pills > li {
-    float: none;
-    margin: 0;
-  }
-  .nav-pills > li + li {
-    margin-left: 0;
-  }
-
-  .header .cilantro-logo {
-    text-align: center;
-  }
-
-  .header h3 {
-    text-align: center;
-    padding-top: 20px;
-  }
-
-  .container .jumbotron {
-    padding: 0;
-    border-radius: 0;
-    h1 {
-      font-size: 40px;
-    }
-    p {
-
-    }
-    .lead {
-      font-size: 16px;
-    }
-    .company-name {
-      font-size: 40px;
-    }
-  }
-
-  .marketing {
-    width: 100%;
-  }
-
-  .company-logo {
-    margin: 50px auto 30px;
-    display: block;
-  }
-
-  #online {
-    .companies {
-      width: 100%;
-      border-radius: 0;
-
-      .title {
-        font-size: 14px;
-        font-weight: 200;
-        padding: 20px;
-      }
-    }
-    .company-logo {
-      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-      -webkit-filter: grayscale(0%);
-    }
-  }
-
-  #email a {
-    margin-top: 20px;
-  } 
-
-  #chat {
-    .title {
-      width: 100%;
-      float: none;
-      text-align: center;
-    }
-    .referral {
-      display: none;
-    }
-  }
-
-  .referral-mobile {
-    display: block;
-    width: 100%;
-    float: none;
-    text-align: center;
-  }
-
-  .footer {
-    text-align: center;
-    .footer-content {
-      width: 100%;
-    }
-
-    span {
-      float: none;
-      display: block;
-    }
-  }
-
+.plan-price-text {
+  font-size: 20px;
+  font-weight:500;
 }
 
+#watch-link a {
+  color:black;
+}
 

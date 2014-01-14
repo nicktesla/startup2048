@@ -6,7 +6,9 @@ var express = require('express'),
     fs = require('fs'),
     engines = require('consolidate'),
     routes = require('./lib/routes'),
-    passport = require('passport');
+    passport = require('passport'),
+    MongoStore = require('connect-mongo')(express),
+    stage = require('./lib/config/stage');        
 
 var app = express();
 
@@ -35,7 +37,10 @@ app.configure(function(){
   app.use(express.cookieParser());  
   app.use(express.session({
     secret: 'aaaaaa',
-    maxAge: 3600000
+    maxAge: 3600000,
+    store: new MongoStore({ 
+      url: stage.getMongoUri()
+    })    
   }));  
   app.use(passport.initialize());
   app.use(passport.session());  
@@ -60,19 +65,21 @@ app.configure('production', function(){
 // Routes
 app.get('/', routes.index(app));
 app.get('/partials/:name', routes.partials(app));
-app.get('/api/awesomeThings', api.awesomeThings);
 app.get('/api/user/:firstName/:lastName', api.user);
+app.put('/api/user/plan/:username', api.updateUserPlan);
 app.post('/api/signup', api.newSignup);
-app.post('/api/startup', api.newStartup);
-app.post('/api/notifyEmployees', api.notifyEmployees);
-app.post('/api/referrals', api.newReferral);
-app.get('/api/requests', api.getRequests);
+app.post('/api/project', api.createProject);
+app.put('/api/project', api.updateProject);
+app.get('/api/project/:owner', api.getUserProjects);
+app.post('/api/test', api.createTest);
+app.put('/api/test', api.appendTest);
+app.get('/api/test/:projectName', api.getProjectTests);
+app.get('/api/plan', api.getPlans);
+
 
 auth(app, passport);
 
 //redirect all others to the index (HTML5 history)
-app.get('/room/:roomName', routes.index(app));
-app.get('/room/:roomName/company/:companyName', routes.index(app));
 app.get('/dashboard', routes.index(app));
 
 

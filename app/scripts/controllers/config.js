@@ -7,7 +7,7 @@ angular.module('cilantroApp.config', [])
    .constant('version', '0.1')
 
    // your Firebase URL goes here
-   .constant('FBURL', 'https://cilantro.firebaseio.com');
+   .constant('FBURL', '');
 
    //you can use this one to try out a demo of the seed
    //.constant('FBURL', 'https://angularfire-seed.firebaseio.com');

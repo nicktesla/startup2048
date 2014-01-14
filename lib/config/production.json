@@ -1,0 +1,10 @@
+{
+	"app": {
+		"url": "http://houdini.herokuapp.com"
+	},
+	"github": {
+		"clientId": "deb58bb48a685b7ef55f",
+		"clientSecret": "c71d6675d4892a622cf649045270f9fe8e9e2e4f"
+	}
+}
+

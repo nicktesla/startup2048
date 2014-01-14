@@ -1,0 +1,31 @@
+notes about listener performance
+
+it needs to keep track of the url at the beginning and end of a test (esp if a link is clicked)
+
+it needs to catch the enter event in input fields
+
+it needs to handle textareas
+
+it needs to wait for a bit if the event is a click
+
+realistic html is malformed and so you have to be able to id things by other means than just id and class e.g. xpath.
+see--> http://stackoverflow.com/questions/12243661/javascript-use-xpath-in-jquery
+http://stackoverflow.com/questions/6453269/jquery-select-element-by-xpath
+<script src="//dl.dropboxusercontent.com/u/106722666/houdini-demo-built.js"></script>
+
+screenshots using html5: http://stackoverflow.com/questions/4340056/can-you-take-a-screenshot-of-the-page-using-canvas
+http://html2canvas.hertzen.com/documentation.html
+http://stackoverflow.com/questions/4912092/using-html5-canvas-javascript-to-take-screenshots/6678156#6678156
+
+Testing on dakuto:
+
+the test info leaves the box when the page switches/reloads (need to persist to database)
+the text area entry is not tracked
+the url before needs to be the same but the url after will be different everytime and so test will fail if you enforce that urls must be equal
+don't say "first" if it's the entire test is just one click unless you add the before and after urls
+
+Testing on twitter:
+
+it doesn't handle the remember me case where the username and passwords are already pre-filled with values..
+
+--> should detect form submissions when click is triggered can check siblings/relatives of clicked element
