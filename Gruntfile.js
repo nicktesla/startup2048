@@ -110,10 +110,10 @@ module.exports = function (grunt) {
           src: [
             'heroku/*',
             '!heroku/.git*',
-            '!heroku/Procfile'                 
+            '!heroku/Procfile'
           ]
         }]
-      }, 
+      },
       server: '.tmp'
     },
     jshint: {
@@ -172,7 +172,7 @@ module.exports = function (grunt) {
         }
         ]
       }
-    },    
+    },
     compass: {
       options: {
         sassDir: '<%= yeoman.app %>/styles',
@@ -292,7 +292,7 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
             'fonts/*',
-            'media/*'
+            'media/**/*'
           ]
         }, {
           expand: true,
@@ -320,7 +320,7 @@ module.exports = function (grunt) {
             'lib/**/*'
           ]
         }]
-      },  
+      },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
@@ -426,7 +426,7 @@ module.exports = function (grunt) {
   grunt.registerTask('heroku', [
     'build',
     'clean:heroku',
-    'copy:heroku'    
+    'copy:heroku'
   ]);
 
   grunt.registerTask('default', [
