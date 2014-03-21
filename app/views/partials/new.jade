@@ -1,5 +1,10 @@
 .site-background
   .iphone-container
+    .heading
+      h1.title 2048
+      .scores-container
+        .score-container 0
+        .best-container 0
     .game-container
       .game-message
         p
@@ -30,9 +35,9 @@
       .tile-container
   .text-container
     .text
-      .title App 2048
+      .title Startup 2048
       .body-text
-        p Join the numbers and get to the WhatsApp tile! Let's play App 2048!
+        p Join the startups and get to the WhatsApp tile! Let's play Startup 2048!
 
         p
           |  Created by
@@ -52,6 +57,6 @@
         form#email(role="form")
           .form-group(ng-hide="signedUp('signup')")
             div(ng-hide="signedUp('signup')")
-              input#email-input.form-control(type="email", ng-model="email", placeholder="Enter your email")
-              input.btn.btn-success(type="submit", ng-click="handleForm('signup')", value="Submit")
+              input#email-input.form-control(type="email", ng-model="email", placeholder="Enter your email", style="width:200px; margin:10px;")
+              input.btn.btn-success(type="submit", ng-click="handleForm('signup')", value="Submit", style="margin-left:60px;")
         span.thankyou-text(ng-show="signedUp('signup')") Thanks so much for your interest!

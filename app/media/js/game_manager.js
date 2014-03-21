@@ -26,6 +26,7 @@ GameManager.prototype.keepPlaying = function () {
 };
 
 GameManager.prototype.isGameTerminated = function () {
+  console.log("is game over?:", this.over);
   if (this.over || (this.won && !this.keepPlaying)) {
     return true;
   } else {

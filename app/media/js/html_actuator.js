@@ -3,7 +3,7 @@ function HTMLActuator() {
   this.scoreContainer   = document.querySelector(".score-container");
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
-
+  console.log("message container is: ", this.messageContainer);
   this.score = 0;
 }
 
@@ -23,9 +23,10 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
-
+    console.log(metadata);
     if (metadata.terminated) {
       if (metadata.over) {
+        console.log("you lose")
         self.message(false); // You lose
       } else if (metadata.won) {
         self.message(true); // You win!
@@ -47,7 +48,6 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  console.log("the tile is: ", tile);
   var self = this;
 
   var wrapper   = document.createElement("div");
@@ -64,7 +64,6 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  console.log("the tile is: ", tile);
   inner.style.backgroundImage = 'url(' + tile.imageURL + ')';
   inner.style.backgroundSize = 'cover';
 
@@ -113,7 +112,7 @@ HTMLActuator.prototype.updateScore = function (score) {
   var difference = score - this.score;
   this.score = score;
 
-  this.scoreContainer.textContent = this.score;
+  this.scoreContainer.textContent = this.score < 100?this.score*10 + "M": Math.round(this.score/100) + "B"
 
   if (difference > 0) {
     var addition = document.createElement("div");
@@ -125,7 +124,7 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = bestScore;
+  this.bestContainer.textContent = Math.round(bestScore/100) + "B";
 };
 
 HTMLActuator.prototype.message = function (won) {

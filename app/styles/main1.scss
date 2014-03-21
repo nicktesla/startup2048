@@ -59,12 +59,13 @@ h1.title {
   background: #bbada0;
   padding: 15px 25px;
   font-size: 25px;
-  height: 25px;
+  height: 60px;
   line-height: 47px;
   font-weight: bold;
   border-radius: 3px;
   color: white;
   margin-top: 8px;
+  margin-right: 10px;
   text-align: center; }
   .score-container:after, .best-container:after {
     position: absolute;
@@ -226,7 +227,7 @@ hr {
   margin-right: 10px;
   float: left;
   border-radius: 3px;
-  //background: rgba(238, 228, 218, 0.35);
+  background: rgba(238, 228, 218, 0.02);
 }
   .grid-cell:last-child {
     margin-right: 0; }
