@@ -5,8 +5,8 @@
       .score-container 0
       .best-container 0
   p.game-intro
-    | Join the numbers and get to the
-    strong 2048 tile!
+    | Join the startups and get to the
+    strong  $20.48B Whatsapp valuation!
   .game-container
     .game-message
       p
@@ -59,11 +59,16 @@
     |  Startup 2048 by
     a.buffer(href='')  Liquid Labs
   hr
-  .signup
-    p.prompt
-      | We are building an app that makes finding a job delightful.
-    p Want early access invite?
-      a.buffer.btn.btn-primary.btn-success(ng-click="loginSocial()", href="") Login with Github.
+.signup
+  p.prompt
+    | P.S. We are building an app that lets you chat 1:1 with engineers at top tech companies, get advice, answers and skip to a phone screen if there's mutual interest.
+  p Want an invite?
+  form#email(role="form")
+    .form-group(ng-hide="signedUp('signup')")
+      div(ng-hide="signedUp('signup')")
+        input#email-input.form-control(type="email", ng-model="email", placeholder="Enter your email")
+        input.btn.btn-success(type="submit", ng-click="handleForm('signup')", value="Submit")
+  span.thankyou-text(ng-show="signedUp('signup')") Thanks so much for your interest!
 .footer
   p ♥ from San Francisco
     //- span
