@@ -1,0 +1,57 @@
+.site-background
+  .iphone-container
+    .game-container
+      .game-message
+        p
+        .lower
+          a.keep-playing-button Keep going
+          a.retry-button Try again
+      .grid-container
+        .grid-row
+          .grid-cell
+          .grid-cell
+          .grid-cell
+          .grid-cell
+        .grid-row
+          .grid-cell
+          .grid-cell
+          .grid-cell
+          .grid-cell
+        .grid-row
+          .grid-cell
+          .grid-cell
+          .grid-cell
+          .grid-cell
+        .grid-row
+          .grid-cell
+          .grid-cell
+          .grid-cell
+          .grid-cell
+      .tile-container
+  .text-container
+    .text
+      .title App 2048
+      .body-text
+        p Join the numbers and get to the WhatsApp tile! Let's play App 2048!
+
+        p
+          |  Created by
+          a.buffer(href='http://gabrielecirulli.com', target='_blank') Gabriele Cirulli.
+          |  Based on
+          a.buffer(href='https://itunes.apple.com/us/app/1024!/id823499224', target='_blank') 1024 by Veewo Studio
+          |  and conceptually similar to
+          a.buffer(href='http://asherv.com/threes/', target='_blank') Threes by Asher Vollmer.
+        p
+          |  App 2048 by
+          a.buffer(href='')  Liquid Labs
+        hr
+        .signup
+        p.prompt
+          | Oh yeah... We are about to launch an awesome app for developers signup to find out what it is!
+        p
+        form#email(role="form")
+          .form-group(ng-hide="signedUp('signup')")
+            div(ng-hide="signedUp('signup')")
+              input#email-input.form-control(type="email", ng-model="email", placeholder="Enter your email")
+              input.btn.btn-success(type="submit", ng-click="handleForm('signup')", value="Submit")
+        span.thankyou-text(ng-show="signedUp('signup')") Thanks so much for your interest!
