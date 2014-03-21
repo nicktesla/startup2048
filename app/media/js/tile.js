@@ -1,66 +1,78 @@
 var valueToStartup = {
   2 : {
-    startupName: "Liquid Labs",
-    valuation: "10M"
+    startupName: "Myspace",
+    valuation: "10M",
+    imageURL: "/media/appicons/Myspace.png"
   },
 
   4: {
-    startupName: "SpoonRocket",
-    valuation: "20M"
+    startupName: "Bebo",
+    valuation: "20M",
+    imageURL: "/media/appicons/Bebo.png"
   },
 
   8: {
-    startupName: "HomeJoy",
-    valuation: "80M"
+    startupName: "Path",
+    valuation: "80M",
+    imageURL: "/media/appicons/Path.png"
   },
 
   16: {
-    startupName: "Foursquare",
-    valuation: "160M"
+    startupName: "Quora",
+    valuation: "160M",
+    imageURL: "/media/appicons/Quora.png"
   },
 
   32: {
-    startupName: "Weebly",
-    valuation: "320M"
+    startupName: "Reddit",
+    valuation: "320M",
+    imageURL: "/media/appicons/Reddit.png"
   },
 
   64: {
-    startupName: "Cloudera",
-    valuation: "640M"
+    startupName: "Pinterest",
+    valuation: "640M",
+    imageURL: "/media/appicons/Pinterest.png"
   },
 
   128: {
-    startupName: "Stripe",
-    valuation: "1.28B"
+    startupName: "Github",
+    valuation: "1.28B",
+    imageURL: "/media/appicons/Github.png"
   },
 
   256: {
-    startupName: "Square",
-    valuation: "2.56B"
+    startupName: "Instagram",
+    valuation: "2.56B",
+    imageURL: "/media/appicons/Instagram.png"
   },
 
   512: {
-    startupName: "AirBnB",
-    valuation: "5.12B"
+    startupName: "LinkedIn",
+    valuation: "5.12B",
+    imageURL: "/media/appicons/Linkedin.png"
   },
 
   1024: {
-    startupName: "DropBox",
-    valuation: "10.24B"
+    startupName: "Twitter",
+    valuation: "10.24B",
+    imageURL: "/media/appicons/Twitter.png"
   },
 
   2048: {
-    startupName: "WhatsApp",
-    valuation: "20.48B"
+    startupName: "Whatsapp",
+    valuation: "20.48B",
+    imageURL: "/media/appicons/Whatsapp.png"
   }
 }
 
-function Tile(position, value, startupName, valuation) {
+function Tile(position, value) {
   this.x                = position.x;
   this.y                = position.y;
   this.value            = value || 2;
   this.startupName      = valueToStartup[value].startupName
   this.valuation        = valueToStartup[value].valuation
+  this.imageURL         = valueToStartup[value].imageURL
 
   this.previousPosition = null;
   this.mergedFrom       = null; // Tracks tiles that merged together
