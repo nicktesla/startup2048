@@ -37,36 +37,33 @@
     .tile-container
   p.game-explanation
     strong.important How to play:
-    | Use your
+    |  Use your
     strong arrow keys
-    | to move the tiles. When two tiles with the same number touch, they
+    |  to move the tiles. When two tiles with the same number touch, they
     strong merge into one!
   hr
   p
     strong.important Note:
-    | This site is the official version of 2048. You can play it on your phone via
-    a(href='http://git.io/2048') http://git.io/2048.
-    | All other apps or sites are derivatives or fakes, and should be used with caution.
+    |  This site is the official version of 2048. You can play it on your phone via
+    a.buffer(href='http://git.io/2048') http://git.io/2048.
+    |  All other apps or sites are derivatives or fakes, and should be used with caution.
   hr
   p
-    | Created by
-    a(href='http://gabrielecirulli.com', target='_blank') Gabriele Cirulli.
-    | Based on
-    a(href='https://itunes.apple.com/us/app/1024!/id823499224', target='_blank') 1024 by Veewo Studio
-    | and conceptually similar to
-    a(href='http://asherv.com/threes/', target='_blank') Threes by Asher Vollmer.
-
+    |  Created by
+    a.buffer(href='http://gabrielecirulli.com', target='_blank') Gabriele Cirulli.
+    |  Based on
+    a.buffer(href='https://itunes.apple.com/us/app/1024!/id823499224', target='_blank') 1024 by Veewo Studio
+    |  and conceptually similar to
+    a.buffer(href='http://asherv.com/threes/', target='_blank') Threes by Asher Vollmer.
+  p
+    |  Startup 2048 by
+    a.buffer(href='')  Liquid Labs
+  hr
   .signup
-    form#email(role="form")
-      .form-group(ng-hide="signedUp('signup')")
-        label(for="email") Want to get notified when we launch? Enter your email and we'll let you know!
-        div(ng-hide="signedUp('signup')")
-          input#email-input.form-control(type="email", ng-model="email", placeholder="Enter your email")
-          input.btn.btn-success(type="submit", ng-click="handleForm('signup')", value="Submit")
-    span.thankyou-text(ng-show="signedUp('signup')") Thanks so much for your interest!
-    p.thankyou-text(ng-hide="currentUser || !signedUp('signup')") Want early access?
-      span.login-prompt
-        a.btn.btn-primary.btn-success(ng-click="loginSocial()", href="") Login with Github.
+    p.prompt
+      | We are building an app that makes finding a job delightful.
+    p Want early access invite?
+      a.buffer.btn.btn-primary.btn-success(ng-click="loginSocial()", href="") Login with Github.
 .footer
   p ♥ from San Francisco
     //- span
