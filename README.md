@@ -1,14 +1,8 @@
 startup2048
 ===========
 
-startup version of 2048
+startup version of Gabrielle Ciculli's 2048
 
-## Install instructions
+## Live Site
+Play it here: http://startup2048.herokuapp.com
 
-`npm install -g grunt-cli`
-`npm install grunt`
-
-## Running
-`npm install`
-`bower install`
-`grunt server`
